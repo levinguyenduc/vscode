@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex02</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 50px;
+        }
+
+        #calculator {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+    <script lang="JavaScript">
+        var txta = prompt("Enter number A");
+        var txtb = prompt("Enter number B");
+
+        if (txta == null || txta == "" || isNaN(txta)) {
+            alert("Number A is formatted incorrect ");
+        } else if (txtb == null || txtb == "" || isNaN(txtb)) {
+            alert("Number B is formatted incorrect ");
+        } else {
+            var result = parseFloat(txta) + parseFloat(txtb);
+            alert("result:\n" + txta + " + " + txtb + " = " + result);
+        }
+    </script>
+</head>
+
+<body>
+    <div id="calculator">
+        <h2>Sum Calculator</h2>
+        <label for="num1">Enter Number 1:</label>
+        <input type="text" id="num1" placeholder="Enter a number">
+
+        <label for="num2">Enter Number 2:</label>
+        <input type="text" id="num2" placeholder="Enter a number">
+
+        <button onclick="calculateSum()">Calculate Sum</button>
+
+</body>
+
+
+</html>

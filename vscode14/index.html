@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin: 20px auto;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Multiplication Table Generator</h2>
+    <label for="number">Enter a number:</label>
+    <input type="number" id="number" min="1" value="1">
+    <button onclick="generateTable()">Generate Table</button>
+
+    <table id="multiplicationTable">
+        <!-- The table will be dynamically generated here using JavaScript -->
+    </table>
+
+    <script>
+        function generateTable() {
+            // Get the number entered by the user
+            var number = parseInt(document.getElementById('number').value);
+
+            // Get the table element
+            var table = document.getElementById('multiplicationTable');
+
+            // Clear previous content
+            table.innerHTML = '';
+
+            // Create table header
+            var headerRow = table.insertRow();
+            var headerCell = headerRow.insertCell();
+            headerCell.textContent = 'Multiplier';
+            headerCell.style.fontWeight = 'bold';
+
+            var resultCell = headerRow.insertCell();
+            resultCell.textContent = 'Result';
+            resultCell.style.fontWeight = 'bold';
+
+            // Populate the table with multiplication results
+            for (var i = 1; i <= 10; i++) {
+                var row = table.insertRow();
+                var multiplierCell = row.insertCell();
+                multiplierCell.textContent = number + ' * ' + i;
+
+                var resultCell = row.insertCell();
+                resultCell.textContent = number * i;
+            }
+        }
+    </script>
+
+</body>
+
+</html>

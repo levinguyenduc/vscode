@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iPhone 9 Order</title>
+</head>
+
+<body>
+
+    <label id="pro" data-price="1950">iPhone 9</label>
+    <input id="qty" type="number" />
+    <button onclick="display()">OK</button>
+    <hr />
+    <h3>Name: <span id="name">?</span></h3>
+    <h3>Amount: <span id="amount">?</span></h3>
+
+    <script>
+        function display() {
+            // Use document.getElementById() to access label#pro and input#qty
+            var pro = document.getElementById("pro");
+            var qty = document.getElementById("qty");
+
+            // Read price from data-price attribute and name from #pro content
+            var name = pro.innerText;
+            var price = parseFloat(pro.getAttribute("data-price")); // Convert to a floating-point number
+
+            // Read and get the value from the input box qty
+            var quantity = parseFloat(qty.value); // Convert to a floating-point number
+
+            // Calculating value to money
+            var amount = price * quantity;
+
+            // Display product name and amount on #name and #amount
+            document.getElementById("name").innerText = name;
+            document.getElementById("amount").innerText = amount.toFixed(2); // Display amount with two decimal places
+        }
+    </script>
+
+</body>
+
+</html>

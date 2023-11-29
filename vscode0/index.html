@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Order</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <label id="pro" data-price="1950">iPhone 9</label>
+        <input id="qty" type="number" />
+        <button onclick="display()">OK</button>
+        <hr />
+        <h3>Name: <span id="name">?</span></h3>
+        <h3>Amount: $<span id="amount">?</span></h3>
+    </div>
+
+    <script>
+        function display() {
+            // Access label#pro and input#qty
+            var pro = document.getElementById("pro");
+            var qty = document.getElementById("qty");
+
+            // Read price from data-price attribute and name from #pro content
+            var name = pro.innerText;
+            var price = parseFloat(pro.getAttribute("data-price"));
+
+            // Read and get the value from the input box qty
+            var quantity = parseFloat(qty.value);
+
+            // Calculating value to money
+            var amount = price * quantity;
+
+            // Display product name and amount on #name and #amount
+            document.getElementById("name").innerText = name;
+            document.getElementById("amount").innerText = amount.toFixed(2);
+        }
+    </script>
+</body>
+
+</html>

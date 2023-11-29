@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        input,
+        button {
+            margin: 10px;
+            padding: 5px;
+        }
+    </style>
+    <title>Calculator</title>
+</head>
+
+<body>
+
+    <h1>Mini Calculator</h1>
+
+    <form id="calculatorForm">
+        <label for="number1">Enter Number 1:</label>
+        <input type="text" id="number1" name="number1" required>
+        <br>
+
+        <label for="operator">Select Operator:</label>
+        <select id="operator" name="operator" required>
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+        <br>
+
+        <label for="number2">Enter Number 2:</label>
+        <input type="text" id="number2" name="number2" required>
+        <br>
+
+        <button type="button" onclick="calculate()">Calculate</button>
+        <br>
+
+        <label for="result">Result:</label>
+        <input type="text" id="result" name="result" readonly>
+    </form>
+
+    <script>
+        function calculate() {
+            var number1 = document.getElementById('number1').value;
+            var operator = document.getElementById('operator').value;
+            var number2 = document.getElementById('number2').value;
+
+            // Validate input using regular expressions
+            var numberPattern = /^\d+$/;
+            if (!numberPattern.test(number1) || !numberPattern.test(number2)) {
+                alert('Please enter valid numbers.');
+                return;
+            }
+
+            var expression = number1 + operator + number2;
+
+            try {
+                var result = eval(expression);
+                document.getElementById('result').value = result;
+            } catch (error) {
+                alert('Invalid input. Please check your numbers and operator.');
+            }
+        }
+    </script>
+
+</body>
+
+</html>

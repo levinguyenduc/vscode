@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display date and time</title>
+    <style type="text/css">
+        input {width: 400px;}
+    </style>
+    <script lang="javascript">
+        var timer = null;
+        function play() {
+            var daysOfWeek = ["Chu Nhat", "Thu hai", "Thu ba", "Thu tu", "Thu nam", "Thu sau", "Thu bay"];
+            var today = new Date();
+            document.f.d.value = "Hom nay la: " +daysOfWeek[today.getDay()] +", ngay " + today.getDate() + ", thang " + (today.getMonth() + 1) + ", nam " + today.getFullYear();
+            h = today.getHours();
+            document.f.t.value = "Bay gio la: " + (h>12? h-12: h) + ":" + today.getMinutes() + ":" + today.getSeconds() + " " + (h>11? "PM": "AM");
+            timer = setTimeout("play()", 1000);
+        }
+        function stop() {clearTimeout(timer); }
+    </script>
+</head>
+<body onload="play()">
+    <center><form name="f">
+        <input name="d" /><br/><input name="t" /><br/>
+        <button type="button" onclick="play()">Chay dong ho</button>
+        <button tabindex="button" onclick="stop()">Ngung dong ho</button>
+    </form></center>
+    
+</body>
+</html>

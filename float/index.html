@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .container {
+            border: 1px solid #ccc;
+            overflow: hidden;
+            /* Clear the floats */
+        }
+
+        .float-left {
+            float: left;
+            width: 150px;
+            height: 150px;
+            background-color: #e0e0e0;
+            margin: 10px;
+        }
+
+        .float-right {
+            float: right;
+            width: 150px;
+            height: 150px;
+            background-color: #e0e0e0;
+            margin: 10px;
+        }
+
+        .no-float {
+            width: 150px;
+            height: 150px;
+            background-color: #e0e0e0;
+            margin: 10px;
+            display: inline-block;
+        }
+
+        .no-float-block {
+            width: 150px;
+            height: 150px;
+            background-color: #e0e0e0;
+            margin: 10px;
+        }
+    </style>
+    <title>Floating Elements Example</title>
+</head>
+
+<body>
+    <h1>Floating Elements Example</h1>
+
+    <div class="container">
+        <div class="float-left">Float Left</div>
+        <div class="float-right">Float Right</div>
+    </div>
+
+    <div class="no-float">Inline-Block Element</div>
+
+    <div class="no-float-block">Block Element</div>
+
+    <p>
+        Without floating, the inline-block elements float like words in a text, and block elements just do not float and
+        stay in a vertical block of full width.
+    </p>
+</body>
+
+</html>
